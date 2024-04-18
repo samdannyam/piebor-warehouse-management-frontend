@@ -8,7 +8,7 @@ export default {
   mounted() {
     this.$vuetify.theme.global.name = "light";
     localStorage.setItem("mode", this.$vuetify.theme.name);
-    document.title = "Bus";
+    document.title = "WareHouse";
   },
 };
 </script>

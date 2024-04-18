@@ -124,7 +124,7 @@
             </div>
           </v-list-item> -->
 
-          <!-- <v-list-item @click="logout()" class="py-3 mb-4 px-0 listStyle">
+          <v-list-item @click="logout()" class="py-3 mb-4 px-0 listStyle">
             <div class="d-flex flex-column align-center">
               <v-icon size="x-large" color="core">mdi-logout</v-icon>
               <p
@@ -134,7 +134,7 @@
                 Log out
               </p>
             </div>
-          </v-list-item> -->
+          </v-list-item>
         </v-list>
       </div>
     </div>
@@ -150,28 +150,10 @@ export default {
     drawer: null,
     items: [
       {
-        icon: "mdi-map",
-        text: "Map",
-        link: "/",
-        index: 0,
-      },
-      // {
-      //   icon: "mdi-checkbox-marked-circle-outline",
-      //   text: "!Do Up",
-      //   link: "/dataPush",
-      //   index: 1,
-      // },
-      {
-        icon: "mdi-text-box",
-        text: "Data",
-        link: "/dataTable",
-        index: 2,
-      },
-      {
         icon: "mdi-database",
         text: "V2",
-        link: "/v2",
-        index: 3,
+        link: "/",
+        index: 0,
       },
     ],
     profile: [
@@ -195,8 +177,8 @@ export default {
         this.selectItem = 1;
       } else if (this.$route.name === "Users") {
         this.selectItem = 2;
-      } else if (this.$route.name === "ThinkUp") {
-        this.selectItem = 3;
+      } else if (this.$route.name === "/v2") {
+        this.selectItem = 0;
       } else if (this.$route.name === "Attendance") {
         this.selectItem = -1;
       } else if (this.$route.name === "Attendance-Id") {
@@ -218,8 +200,8 @@ export default {
       this.selectItem = 1;
     } else if (this.$route.name === "Users") {
       this.selectItem = 2;
-    } else if (this.$route.name === "ThinkUp") {
-      this.selectItem = 3;
+    } else if (this.$route.name === "/v2") {
+      this.selectItem = 0;
     } else if (this.$route.name === "Attendance") {
       this.selectItem = -1;
     } else if (this.$route.name === "Attendance-Id") {
