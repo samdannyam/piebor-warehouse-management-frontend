@@ -2,13 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Import your Vue components for different routes
 import Layout from "../layouts/Default.vue";
-import HomePage from "../views/DashBoard.vue";
 import Login from "../views/Login.vue";
-// import Workers from "../views/RealTime.vue";
-// import Attendance from "../views/Attendance.vue";
-// import DataPush from "../views/PushTest.vue";
-// import DevOption from "../devTools/DevOption.vue";
-import DataTable from "../views/DataTable.vue";
 import V2p from "../views/v2.vue";
 
 const router = createRouter({
@@ -18,12 +12,7 @@ const router = createRouter({
       path: "/",
       component: Layout,
       children: [
-        // { path: "/", name: "Dashboard", component: HomePage },
-        // { path: "/dataTable", component: DataTable },
         { path: "/", component: V2p },
-        // { path: "/dataPush", name: "PushData", component: DataPush },
-        // { path: "/poll", name: "Poll", component: Workers },
-        // { path: "/attendance", name: "Attendance", component: Attendance },
       ],
     },
 

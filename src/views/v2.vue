@@ -2,7 +2,7 @@
 import axios from "axios";
 import io from "socket.io-client";
 </script>
-<template>
+<template>  
   <div style="margin: 50px;">
     <v-container class="with-shadow">
       <div style="margin: 8px; display: flex;">
@@ -33,8 +33,8 @@ import io from "socket.io-client";
 export default {
   data() {
     return {
-      socketUrl: "http://82.197.92.248",
-      // socketUrl: "http://localhost:3000",
+      // socketUrl: "http://82.197.92.248",
+      socketUrl: "http://localhost:3001",
       devices: [],
       received: "",
       keys: [

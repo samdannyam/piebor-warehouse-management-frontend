@@ -35,43 +35,7 @@
       style="height: 100vh; width: 100px; overflow-y: auto; direction: rtl"
     >
       <div>
-        <!-- <div style="font-weight: 600">
-          <div
-            class="d-flex flex-column align-center listStyle py-2"
-            :class="{ selected: selectItem === -1 }"
-          >
-            <v-btn
-              @click="attendance()"
-              icon
-              rounded="lg"
-              class=""
-              v-bind="props"
-              elevation="0"
-              :style="
-                $vuetify.theme.name == 'dark'
-                  ? 'background: white'
-                  : selectItem === -1
-                    ? ''
-                    : 'border: 2px solid black'
-              "
-            >
-              <v-icon
-                size="x-large"
-                :color="selectItem === -1 ? '#3aafa9' : 'black'"
-              >
-                mdi-account-outline
-              </v-icon>
-            </v-btn>
-            <p
-              style="font-size: 12px; font-weight: 400; opacity: 0.6"
-              class="mt-1"
-            >
-              User
-            </p>
-          </div>
-        </div> -->
-
-        <v-list flat class="mt-5">
+       <v-list flat class="mt-5">
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
@@ -106,23 +70,6 @@
 
       <div class="mt-16">
         <v-list flat class="">
-          <!-- <v-list-item @click="changeTheme()" class="py-3 mb-4 px-0 listStyle">
-            <div class="d-flex flex-column align-center">
-              <v-icon size="x-large" color="core">
-                {{
-                  $vuetify.theme.name == "dark"
-                    ? "mdi-weather-sunny"
-                    : "mdi-weather-night"
-                }}
-              </v-icon>
-              <p
-                style="font-size: 12px; font-weight: 400; opacity: 0.6"
-                class="mt-1"
-              >
-                {{ $vuetify.theme.name == "dark" ? "Light" : "Dark" }} Mode
-              </p>
-            </div>
-          </v-list-item> -->
 
           <v-list-item @click="logout()" class="py-3 mb-4 px-0 listStyle">
             <div class="d-flex flex-column align-center">
@@ -150,41 +97,17 @@ export default {
     drawer: null,
     items: [
       {
-        icon: "mdi-database",
-        text: "V2",
+        icon: "mdi-view-dashboard",
+        text: "DashBoard",
         link: "/",
         index: 0,
-      },
-    ],
-    profile: [
-      {
-        title: "Ирц Бүртгэл",
-        icon: "mdi-login",
-      },
-      {
-        title: "Гарах",
-        icon: "mdi-logout",
       },
     ],
   }),
   watch: {
     $route() {
-      if (this.$route.path === "/") {
+      if (this.$route.name === "/v2") {
         this.selectItem = 0;
-      } else if (this.$route.path === "/tasks") {
-        this.selectItem = 1;
-      } else if (this.$route.name === "Tasks-Id") {
-        this.selectItem = 1;
-      } else if (this.$route.name === "Users") {
-        this.selectItem = 2;
-      } else if (this.$route.name === "/v2") {
-        this.selectItem = 0;
-      } else if (this.$route.name === "Attendance") {
-        this.selectItem = -1;
-      } else if (this.$route.name === "Attendance-Id") {
-        this.selectItem = -1;
-      } else {
-        this.selectItem = 4;
       }
     },
   },
@@ -192,22 +115,8 @@ export default {
     const theme = localStorage.getItem("mode");
     if (theme) this.$vuetify.theme.global.name = theme;
     window.addEventListener("resize", this.updateScreenWidth);
-    if (this.$route.path === "/") {
+    if (this.$route.name === "/v2") {
       this.selectItem = 0;
-    } else if (this.$route.path === "/tasks") {
-      this.selectItem = 1;
-    } else if (this.$route.name === "Tasks-Id") {
-      this.selectItem = 1;
-    } else if (this.$route.name === "Users") {
-      this.selectItem = 2;
-    } else if (this.$route.name === "/v2") {
-      this.selectItem = 0;
-    } else if (this.$route.name === "Attendance") {
-      this.selectItem = -1;
-    } else if (this.$route.name === "Attendance-Id") {
-      this.selectItem = -1;
-    } else {
-      this.selectItem = 4;
     }
   },
   beforeDestroy() {
