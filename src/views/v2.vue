@@ -17,7 +17,7 @@ import io from "socket.io-client";
               <th v-for="key in keys" class="text-left">
                 {{ key.value }}
               </th>
-            </tr>
+            </tr> 
           </thead>
           <tbody>
             <tr v-for="(value, key) in received.datas" :key="key">
