@@ -15,7 +15,7 @@ loadFonts();
 
 // axios.defaults.baseURL = "http://localhost:4001/api/";
 // axios.defaults.baseURL = "https://ubbus.online/api/";
-axios.defaults.baseURL = "http://82.197.92.248/apis/warehouse";
+axios.defaults.baseURL = "http://82.197.92.248/apis/warehouse"; 
 
 // axios.interceptors.request.use(
 //   async (config) => {
