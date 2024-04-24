@@ -33,8 +33,8 @@ import io from "socket.io-client";
 export default {
   data() {
     return {
-      // socketUrl: "http://82.197.92.248",
-      socketUrl: "http://localhost:3001",
+      socketUrl: "http://82.197.92.248/sockets/warehouse",
+      // socketUrl: "http://localhost:3001",
       devices: [],
       received: "",
       keys: [
